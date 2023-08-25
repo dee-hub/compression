@@ -2,8 +2,7 @@ tensorflow-compression
 streamlit
 pandas
 numpy
-tensorflow
+tensorflow==2.3
 tempfile
 absl-py
-tensorflow
 numpy
