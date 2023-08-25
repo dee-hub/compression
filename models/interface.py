@@ -43,7 +43,7 @@ def main():
         if st.button("Execute"):
             if operation == "Compress":
                 # Call the function to compress
-                compressed_file = compress_image(uploaded_file.name, algorithm, quality)
+                compressed_file = compress_image(uploaded_image.name, algorithm, quality)
                 st.write("Compression Done!")
                 st.download_button('Download Compressed File', file_name=compressed_file)
                 #with open(compressed_file, 'rb') as f:
