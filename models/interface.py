@@ -5,10 +5,10 @@ import subprocess
 import tempfile
 def compress_image(image_path, algorithm, quality):
     if algorithm == "Factorized Prior Autoencoder":
-        subprocess.run(["python", "tfci.py", "compress", f"bmshj2018-factorized-msssim-{quality}", image_path])
+        subprocess.run(["python", "models/tfci.py", "compress", f"bmshj2018-factorized-msssim-{quality}", image_path])
         return image_path + ".tfci"
     elif algorithm == "Nonlinear transform coder model with factorized priors":
-        subprocess.run(["python", "tfci.py", "compress", "b2018-gdn-128-1", image_path])
+        subprocess.run(["python", "models/tfci.py", "compress", "b2018-gdn-128-1", image_path])
         return image_path + ".tfci"
     # Add logic for the third algorithm
 
