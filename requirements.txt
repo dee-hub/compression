@@ -3,6 +3,5 @@ streamlit
 pandas
 numpy
 tensorflow
-tempfile
 absl-py
 numpy
