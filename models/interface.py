@@ -2,7 +2,6 @@ import streamlit as st
 import os
 import tfci
 import subprocess
-import tempfile
 def compress_image(image_path, algorithm, quality):
     if algorithm == "Factorized Prior Autoencoder":
         subprocess.run(["python", "models/tfci.py", "compress", f"bmshj2018-factorized-msssim-{quality}", image_path])
