@@ -39,10 +39,14 @@ def main():
             quality = st.selectbox("Select a quality level", [1, 2, 3, 4])
         elif algorithm == "Hyperprior Model with Non Zero-Mean Gaussian Conditionals":
             quality = st.selectbox("Select a quality level", [1, 2, 3, 4, 5, 6, 7, 8])
+
+        tfile = tempfile.NamedTemporaryFile(delete=False) 
+        tfile.write(uploaded_image.read())
+        
         if st.button("Execute"):
             if operation == "Compress":
                 # Call the function to compress
-                compressed_file = compress_image(uploaded_image.name, algorithm, quality)
+                compressed_file = compress_image(tfile.name, algorithm, quality)
                 st.write("Compression Done!")
                 with open(compressed_file, 'rb') as f:
                     st.download_button('Download Compressed File', f, file_name=compressed_file)
