@@ -44,7 +44,9 @@ def main():
                 # Call the function to compress
                 compressed_file = compress_image(uploaded_image.name, algorithm, quality)
                 st.write("Compression Done!")
-                st.download_button(label="Download Compressed File", data=compressed_file)
+                with open(compressed_file, 'rb') as f:
+                    st.download_button('Download Compressed File', f, file_name=Download Compressed File)
+                    #st.download_button(label="", data=compressed_file)
 
             else:
                 # Call the function to decompress
